@@ -7,21 +7,6 @@ financial statement and stock data pulled via `yfinance`. The project computes
 bank-specific financial ratios, builds a composite Financial Health Score, and 
 verifies unusual trends against real corporate events (mergers/acquisitions).
 
-## Dataset
-Data is pulled live via the `yfinance` Python library (Yahoo Finance API) — there is 
-no static dataset file to download. Running the notebook fetches current data for:
-
-| Bank | Ticker |
-|---|---|
-| State Bank of India | SBIN.NS |
-| HDFC Bank | HDFCBANK.NS |
-| ICICI Bank | ICICIBANK.NS |
-| Kotak Mahindra Bank | KOTAKBANK.NS |
-| Axis Bank | AXISBANK.NS |
-
-Two years of daily price history and four years of annual financial statements 
-(income statement, balance sheet) are pulled per bank.
-
 ## Why bank-specific ratios?
 Banks don't report financials like typical companies — there's no "Current Assets" 
 or generic "Operating Income" line, because their core business (loans, deposits, 
@@ -66,13 +51,7 @@ A weighted, peer-relative (min-max normalized) score per year:
   recovering sharply the following year.
 
 ## Tools used
-Python, pandas, yfinance, matplotlib, Jupyter Notebook
-
-## Setup & Run Instructions
-1. Install dependencies: `pip install -r requirements.txt`
-2. Open `Sneha_BankFinancialHealthAnalysis.ipynb` in Jupyter Notebook
-3. Run all cells top to bottom (Kernel → Restart & Run All)
-4. Charts and CSV outputs will be saved to the `outputs/` and `data/` folders
+Python, pandas, yfinance, matplotlib
 
 ## Limitations
 - Min-max normalization with only 5 banks is sensitive to outliers — each year's 
